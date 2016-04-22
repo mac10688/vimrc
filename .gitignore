@@ -1,4 +1,4 @@
 .init-vim.rplugin~
 ./.init-vim.rplugin~
 *.init-vim.rplugin~
-*.rplugin~
+*.vim-rplugin~
