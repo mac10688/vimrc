@@ -1,11 +1,25 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath^=/opt/dein/repos/github.com/Shougo/dein.vim
+
+if has ("win32")
+    set runtimepath^=C:\cygdrive\c\dein\repos\github.com\Shougo\dein.vim
+else
+    if has ("unix")
+        set runtimepath^=/opt/dein/repos/github.com/Shougo/dein.vim
+    endif
+endif
 
 call dein#begin(expand('~/.cache/dein'))
 
-call dein#add('/opt/dein/repos/github.com/Shougo/dein.vim')
+if has ("win32")
+        call dein#add('C:\cygdrive\c\dein\repos\github.com\Shougo\dein.vim')
+else
+    if has ("unix")
+        call dein#add('/opt/dein/repos/github.com/Shougo/dein.vim')
+    endif
+endif
+
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('vim-airline/vim-airline')
 call dein#add('freeo/vim-kalisi')
