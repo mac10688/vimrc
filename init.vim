@@ -18,6 +18,7 @@ call dein#add('kien/ctrlp.vim')
 call dein#add('urso/haskell_syntax.vim')
 call dein#add('tomasr/molokai')
 call dein#add('zandrmartin/vim-distill')
+call dein#add('tpope/vim-commentary')
 
 call dein#end()
 
@@ -50,4 +51,15 @@ map <C-n> :NERDTreeToggle<CR>
 
 colorscheme distill
 
-let g:rehash256=1
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let mapleader=','
+
+nmap <leader>t :vsplit new<CR>:terminal<CR>
+
+set splitright
+set splitbelow
