@@ -38,6 +38,27 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set hlsearch
 
+"This will mark extra whitespace as bad and probably color it red
+autocmd BufWritePre * %s/\s\+$//e
+
+"Close auto-complete window when finished
+let g:ycm_autoclose_preview_window_after_completion=1
+"Shortcut to goto definition
+map <leader>g :YcmCompleter GoToDefintionElseDecleration<CR>
+
+"python with virtualenv support
+python3 << en
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+en
+
+"make code look pretty?
+let python_highlight_all=1
+
 execute pathogen#infect()
 
 map <Leader>s :SyntasticToggleMode<CR>
